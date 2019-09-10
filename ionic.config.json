@@ -1,5 +1,8 @@
 {
   "name": "Translate",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

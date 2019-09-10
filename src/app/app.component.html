@@ -1,3 +1,49 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start">
+    <ion-header primary>
+      <ion-toolbar>
+        <ion-title>
+          Translate
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/quiz">
+            <ion-icon name="school" slot="start"></ion-icon>
+            <ion-label>Quiz</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/easy">
+            <ion-icon color="success" name="medkit" slot="start"></ion-icon>
+            <ion-label color="success">Easy</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/medium">
+            <ion-icon color="warning" name="medal" slot="start"></ion-icon>
+            <ion-label color="warning">Medium</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/hard">
+            <ion-icon color="danger" name="nuclear" slot="start"></ion-icon>
+            <ion-label color="danger">Hard</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" button routerLink="/dictionary">
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Dictionary</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
