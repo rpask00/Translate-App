@@ -87,6 +87,8 @@ export class DataBaseService {
     })
   }
 
+  // new methods
+
   remove(key: String) {
     this.db.object('dictionary/' + key).remove()
   }
