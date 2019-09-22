@@ -23,7 +23,7 @@ export class DictionaryPage implements OnInit {
   constructor(
     private dbSrv: DataBaseService,
     private loadingCtrl: LoadingController,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -46,6 +46,31 @@ export class DictionaryPage implements OnInit {
       if (res.includes('easy') || res.includes('hard') || res.includes('medium')) return res
       else return ''
     }).join('')
+  }
+
+  move(level, slidingItem, word) {
+    slidingItem.close()
+    this.elementDisplay.nativeElement.classList.remove('visible')
+    this.loadingCtrl.create({
+      message: `moving to ${level}`
+    }).then(loadEl => {
+      loadEl.present();
+      this.dbSrv.changeLevel(word._id, level).subscribe(res => {
+        this.getWords = this.dbSrv.getWords(this.level)
+        setTimeout(() => {
+          this.elementDisplay.nativeElement.classList.add('visible')
+          loadEl.dismiss()
+        }, 1500);
+      })
+    })
+
+
+  }
+
+
+  remove(slidingItem, word) {
+    slidingItem.close()
+    this.dbSrv.removeWord(word._id)
   }
 
 }
