@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataBaseService } from 'src/app/services/data-base.service';
-import { Word } from 'src/app/models/word.model';
+import { Word, WordAPI } from 'src/app/models/word.model';
 
 @Component({
   selector: 'app-hard',
@@ -10,14 +10,14 @@ import { Word } from 'src/app/models/word.model';
 })
 export class HardPage implements OnInit {
 
-  dictionaryHard$: Observable<Word[]>;
+  dictionaryHard$: Observable<WordAPI[]>;
 
   constructor(
     private dbSrv: DataBaseService
   ) { }
 
   ngOnInit() {
-    this.dictionaryHard$ = this.dbSrv.dictionary$('hard')
+    this.dictionaryHard$ = this.dbSrv.getWords('hard')
   }
 
 }

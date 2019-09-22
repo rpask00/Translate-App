@@ -20,7 +20,7 @@
         <ion-card>
           <img [src]='pl? plFlag : engFlag' />
           <ion-card-header>
-            <ion-card-title>{{pl ? qst[correct].polski : qst[correct].angielski}}</ion-card-title>
+            <ion-card-title>{{pl ? qst[correct].pl : qst[correct].eng}}</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
@@ -28,28 +28,29 @@
     <ion-row>
       <ion-col size-sm='8' offset-sm='2'>
         <ion-card>
-          <ion-item button (click)='placeAnswear(0)' [color]="clear? '' :(correctA ? 'success' : 'danger')" class="activated">
+          <ion-item button (click)='placeAnswear(0)' [color]="clear? '' :(correctA ? 'success' : 'danger')"
+            class="activated">
             <ion-icon name="flame" slot="start"></ion-icon>
-            <ion-label>{{!pl ? qst[0].polski : qst[0].angielski}}</ion-label>
-            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[0].polski : qst[0].angielski}}</ion-card-subtitle>
+            <ion-label>{{!pl ? qst[0].pl : qst[0].eng}}</ion-label>
+            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[0].pl : qst[0].eng}}</ion-card-subtitle>
           </ion-item>
 
           <ion-item button (click)='placeAnswear(1)' [color]="clear? '' :(correctB ? 'success' : 'danger')">
             <ion-icon name="flag" slot="start"></ion-icon>
-            <ion-label>{{!pl ? qst[1].polski : qst[1].angielski}}</ion-label>
-            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[1].polski : qst[1].angielski}}</ion-card-subtitle>
+            <ion-label>{{!pl ? qst[1].pl : qst[1].eng}}</ion-label>
+            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[1].pl : qst[1].eng}}</ion-card-subtitle>
           </ion-item>
 
           <ion-item button (click)='placeAnswear(2)' [color]="clear? '' :(correctC ? 'success' : 'danger')">
             <ion-icon name="flash" slot="start"></ion-icon>
-            <ion-label>{{!pl ? qst[2].polski : qst[2].angielski}}</ion-label>
-            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[2].polski : qst[2].angielski}}</ion-card-subtitle>
+            <ion-label>{{!pl ? qst[2].pl : qst[2].eng}}</ion-label>
+            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[2].pl : qst[2].eng}}</ion-card-subtitle>
           </ion-item>
 
           <ion-item button (click)='placeAnswear(3)' [color]="clear? '' :(correctD ? 'success' : 'danger')">
             <ion-icon name="globe" slot="start"></ion-icon>
-            <ion-label>{{!pl ? qst[3].polski : qst[3].angielski}}</ion-label>
-            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[3].polski : qst[3].angielski}}</ion-card-subtitle>
+            <ion-label>{{!pl ? qst[3].pl : qst[3].eng}}</ion-label>
+            <ion-card-subtitle *ngIf='!clear'>{{pl ? qst[3].pl : qst[3].eng}}</ion-card-subtitle>
           </ion-item>
         </ion-card>
       </ion-col>

@@ -9,43 +9,44 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row *ngIf='dictionary$ | async as dictionary'>
-      <!-- <ion-row *ngIf='dictionary$ | async as dictionary'> -->
-      <ion-col size-sm='8' offset-sm='2'>
-        <ion-virtual-scroll [items]="dictionary">
-          <!-- <word *virtualItem="let word" [wordSnapshot]='word'></word> -->
-          <div *virtualItem="let word">
-            <!-- <word [wordSnapshot]='word'></word> -->
-            <ion-item-sliding #slidingItem>
+    <div class='hidden' #elementDisplay>
+      <ion-row *ngIf='getWords | async as dictionary'>
+        <!-- <ion-row *ngIf='getWords| async as dictionary'> -->
+        <ion-col size-sm='8' offset-sm='2'>
+          <ion-virtual-scroll [items]="dictionary">
+            <div *virtualItem="let word">
+              <ion-item-sliding #slide>
 
-              <ion-item>
+                <ion-item>
 
-                <ion-avatar class='flag'>
-                  <img src="https://loniow.pl/wp-content/uploads/2018/04/flaga-Polski.jpeg">
-                </ion-avatar>
+                  <ion-avatar class='flag'>
+                    <img src="https://loniow.pl/wp-content/uploads/2018/04/flaga-Polski.jpeg">
+                  </ion-avatar>
 
-                <div class="text">
-                  <div class="lg">{{word.polski}}</div>
-                  <div>
-                    <ion-icon name="code"></ion-icon>
+                  <div class="text">
+                    <div class="lg">{{word.pl}}</div>
+                    <div>
+                      <ion-icon name="code"></ion-icon>
+                    </div>
+                    <div class="lg"> {{word.eng}}</div>
                   </div>
-                  <div class="lg"> {{word.angielski}}</div>
-                </div>
-                <ion-avatar class='flag'>
-                  <img src="https://cdn.pixabay.com/photo/2016/01/11/17/04/usa-flag-1133963_960_720.jpg">
-                </ion-avatar>
+                  <ion-avatar class='flag'>
+                    <img src="https://cdn.pixabay.com/photo/2016/01/11/17/04/usa-flag-1133963_960_720.jpg">
+                  </ion-avatar>
 
-              </ion-item>
+                </ion-item>
 
-              <word-options [slidingItem]='slidingItem' [wordSnapshot]='word'></word-options>
+                <word-options [slidingItem]='slide' [wordSupply]='word'></word-options>
 
-            </ion-item-sliding>
+              </ion-item-sliding>
 
-          </div>
-        </ion-virtual-scroll>
-        <!-- <word *ngFor='let word of dictionary' [wordSnapshot]='word'></word> -->
-      </ion-col>
+            </div>
+          </ion-virtual-scroll>
+          <!-- <word *ngFor='let word of dictionary' [wordSupply]='word'></word> -->
+        </ion-col>
 
-    </ion-row>
+      </ion-row>
+    </div>
+
   </ion-grid>
 </ion-content>

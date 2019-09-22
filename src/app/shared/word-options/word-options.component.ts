@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Word } from 'src/app/models/word.model';
+import { Word, WordAPI } from 'src/app/models/word.model';
 import { DatabaseSnapshot, AngularFireAction } from '@angular/fire/database';
 import { DataBaseService } from 'src/app/services/data-base.service';
 import { IonItemSliding } from '@ionic/angular';
@@ -12,25 +12,27 @@ import { IonItemSliding } from '@ionic/angular';
 export class WordOptionsComponent implements OnInit {
 
   key: string;
-  @Input('wordSnapshot') wordSnapshot: AngularFireAction<DatabaseSnapshot<Word>>
+  // @Input('wordSupply') wordSupply: AngularFireAction<DatabaseSnapshot<Word>>
+  @Input('wordSupply') wordSupply: WordAPI;
   @Input('slidingItem') slidingItem: IonItemSliding
   constructor(
     private dbSrv: DataBaseService
   ) { }
 
   ngOnInit() {
-    this.key = this.wordSnapshot.key;
+    this.key = this.wordSupply._id;
   }
 
   move(level) {
     this.slidingItem.close()
-    this.dbSrv.move(this.key, level)
+    this.dbSrv.changeLevel(this.key, level).subscribe(console.log)
+    this.dbSrv.getWord(this.key).subscribe(console.log)
   }
 
 
   remove() {
     this.slidingItem.close()
-    this.dbSrv.remove(this.key)
+    this.dbSrv.removeWord(this.key)
   }
 
 }

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { WordOptionsComponent } from './word-options/word-options.component';
+import { WordComponent } from './word/word.component';
 
 
 @NgModule({
@@ -13,9 +14,11 @@ import { WordOptionsComponent } from './word-options/word-options.component';
     IonicModule,
   ],
   declarations: [
+    WordComponent,
     WordOptionsComponent,
   ],
   exports: [
+    WordComponent,
     WordOptionsComponent
   ]
 })

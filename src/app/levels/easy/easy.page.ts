@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Word } from 'src/app/models/word.model';
+import { Word, WordAPI } from 'src/app/models/word.model';
 import { DataBaseService } from 'src/app/services/data-base.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { DataBaseService } from 'src/app/services/data-base.service';
 })
 export class EasyPage implements OnInit {
 
-  dictionaryEasy$: Observable<Word[]>;
+  dictionaryEasy$: Observable<WordAPI[]>;
   constructor(
     private dbSrv: DataBaseService
   ) { }
 
   ngOnInit() {
     // this.dbSrv.updateDictionary()
-    this.dictionaryEasy$ = this.dbSrv.dictionary$('easy')
+    this.dictionaryEasy$ = this.dbSrv.getWords('easy')
 
   }
 }

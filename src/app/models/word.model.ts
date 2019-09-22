@@ -4,3 +4,10 @@ export interface Word {
     key: string;
     level: string;
 }
+
+export interface WordAPI {
+    angielski: string;
+    polski: string;
+    _id: string;
+    level: string;
+}

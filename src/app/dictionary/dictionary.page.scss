@@ -21,3 +21,14 @@
     flex-grow: 1;
     text-align: center;
 }
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.visible {
+    transform: translateY(0);
+    opacity: 1;
+    transition: .4s;
+}
