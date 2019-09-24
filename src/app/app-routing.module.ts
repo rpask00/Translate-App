@@ -5,9 +5,6 @@ import { DictionaryPage } from './dictionary/dictionary.page';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'quiz' },
-  { path: 'easy', loadChildren: './levels/easy/easy.module#EasyPageModule' },
-  { path: 'medium', loadChildren: './levels/medium/medium.module#MediumPageModule' },
-  { path: 'hard', loadChildren: './levels/hard/hard.module#HardPageModule' },
   { path: 'quiz', loadChildren: './quiz/quiz.module#QuizPageModule' },
   {
     path: 'dictionary',

@@ -12,7 +12,6 @@ export class WordComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.wordSupply)
    }
 
 }

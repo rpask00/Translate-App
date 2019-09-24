@@ -15,7 +15,7 @@ import { filter } from 'rxjs/operators';
 })
 export class DictionaryPage implements OnInit {
 
-  @ViewChild('elementDisplay', { read: ElementRef }) elementDisplay: ElementRef<HTMLDivElement>
+  @ViewChild('elementDisplay', {static: false}) elementDisplay: ElementRef<HTMLDivElement>
   level: any = this.findPickedLevel();
 
   getWords: Observable<WordAPI[]>;

@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MediumPage } from './medium.page';
+import { QuizInterfaceComponent } from './quiz-interface.component';
 
-describe('MediumPage', () => {
-  let component: MediumPage;
-  let fixture: ComponentFixture<MediumPage>;
+describe('QuizInterfaceComponent', () => {
+  let component: QuizInterfaceComponent;
+  let fixture: ComponentFixture<QuizInterfaceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MediumPage ],
+      declarations: [ QuizInterfaceComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MediumPage);
+    fixture = TestBed.createComponent(QuizInterfaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -36,10 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.dbSrv.fetchWords().subscribe()
     this.dbSrv.fetchWords().subscribe(words => {
-      // console.log(words)
-      // this.http.post('http://localhost:3000/load-words', words).subscribe(res => console.log(res))
     })
-    this.dbSrv.getWords('easy').subscribe(console.log)
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { DataBaseService } from '../services/data-base.service';
 import { Word, WordAPI } from '../models/word.model';
 import { Observable } from 'rxjs';
@@ -23,22 +23,23 @@ export class QuizPage implements OnInit {
   correctD: boolean;
   clear: boolean = true;
   correct: number = Math.floor(Math.random() * 4);
+  stattrack = 0;
 
   constructor(
-    private dbSrv: DataBaseService
-  ) { }
+    private dbSrv: DataBaseService,
+    private change:ChangeDetectorRef
+    ) { }
 
   ngOnInit() {
     this.pl = (Math.random() > 0.5);
     this.questions = this.dbSrv.getRandomWords(4, this.level)
   }
-
   segmentChange(event: CustomEvent<SegmentChangeEventDetail>) {
     this.level = event.detail.value
+    this.questions = this.dbSrv.getRandomWords(4, this.level)
   }
 
   nextQuestion(lvl) {
-    console.log(lvl)
     let corr: WordAPI;
     this.questions.pipe(
       take(1),

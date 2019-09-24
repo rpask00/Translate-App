@@ -24,10 +24,7 @@ export class WordOptionsComponent implements OnInit {
   }
 
   move(level) {
-    console.log(this.slidingItem)
     this.slidingItem.close()
-    this.dbSrv.changeLevel(this.key, level).subscribe(console.log)
-    this.dbSrv.getWord(this.key).subscribe(console.log)
   }
 
 

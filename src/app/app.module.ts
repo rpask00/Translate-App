@@ -12,8 +12,9 @@ import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
-import { DictionaryPage, } from './dictionary/dictionary.page';
-import { DictionaryPageModule } from './dictionary/dictionary.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizInterfaceComponent } from './quiz-interface/quiz-interface.component';
+import { QuizPageModule } from './quiz/quiz.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DictionaryPageModule } from './dictionary/dictionary.module';
 
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     IonicModule.forRoot(),
     AngularFireAuthModule,

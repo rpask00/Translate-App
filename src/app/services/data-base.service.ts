@@ -109,6 +109,7 @@ export class DataBaseService {
   }
 
   getRandomWords(quantity: Number, level: String) {
+    if (level.length === 0) { }
     return this.http.get(`http://localhost:3000/randomWords?q=${quantity}&level=${level}`) as Observable<WordAPI[]>;
   }
 

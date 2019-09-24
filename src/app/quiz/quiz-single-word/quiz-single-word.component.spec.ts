@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EasyPage } from './easy.page';
+import { QuizSingleWordComponent } from './quiz-single-word.component';
 
-describe('EasyPage', () => {
-  let component: EasyPage;
-  let fixture: ComponentFixture<EasyPage>;
+describe('QuizSingleWordComponent', () => {
+  let component: QuizSingleWordComponent;
+  let fixture: ComponentFixture<QuizSingleWordComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EasyPage ],
+      declarations: [ QuizSingleWordComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EasyPage);
+    fixture = TestBed.createComponent(QuizSingleWordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
