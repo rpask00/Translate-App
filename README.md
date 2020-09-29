@@ -1,8 +1,8 @@
-#Translate-App
+# Translate-App
 
 Mobile app for learning english.
 
-#Tools:
+# Tools:
 Ionic
 Node
 Express.js
